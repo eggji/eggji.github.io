@@ -1,25 +1,19 @@
-# Jinlong Ji — personal site
+# Jinlong Ji — personal homepage
 
-Simple static page for **Jinlong Ji** ([@eggji](https://github.com/eggji)).  
-Served from **`eggji/eggji.github.io`** → [eggji.github.io](https://eggji.github.io).
+Quiet academic-personal page for **Jinlong Ji** ([@eggji](https://github.com/eggji)).
+Intended for GitHub Pages: **`eggji/eggji.github.io`** → [eggji.github.io](https://eggji.github.io).
 
 ## Files
 
-- `index.html` — name, short bio, links
-- `styles.css` — light layout
+- `index.html` — bio, interests, selected publications, links
+- `styles.css` — light, narrow-column layout
 - `README.md` — this file
 
-Paths are relative so GitHub Pages works from the **main** branch **root**.
+No JavaScript. Paths are relative so Pages works from the **main** branch **root**.
 
-## Edit content
+## Edit
 
-Open `index.html` and update:
-
-- Bio / “currently” line
-- Email `mailto:` and LinkedIn URL (placeholders today)
-- Footer line if you like
-
-Style tweaks live in `styles.css` (`:root` variables).
+In `index.html`, replace the email placeholder (`your.name [at] domain [dot] com`) with a real address when ready. Bio, interests, and publications are plain HTML — update there only with verified facts.
 
 ## Preview
 
@@ -27,8 +21,8 @@ Style tweaks live in `styles.css` (`:root` variables).
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`, or open `index.html` directly.
+Open `http://localhost:8000`, or open `index.html` in a browser.
 
-## GitHub Pages
+## Style notes
 
-Already configured for user site on **main** / **root**. Push these files to `eggji/eggji.github.io` and the site updates at https://eggji.github.io.
+Light background, system fonts, readable column (~40rem), no dark theme, no portfolio cards or CTAs — closer to a faculty/researcher personal page than a product landing page.
