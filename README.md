@@ -1,19 +1,20 @@
 # Jinlong Ji — personal homepage
 
-Quiet academic-personal page for **Jinlong Ji** ([@eggji](https://github.com/eggji)).
-Intended for GitHub Pages: **`eggji/eggji.github.io`** → [eggji.github.io](https://eggji.github.io).
+Quiet personal page for **Jinlong Ji** ([@eggji](https://github.com/eggji)).
+GitHub Pages: **`eggji/eggji.github.io`** → [eggji.github.io](https://eggji.github.io).
 
 ## Files
 
-- `index.html` — bio, interests, selected publications, links
-- `styles.css` — light, narrow-column layout
-- `README.md` — this file
+- `index.html` — about, interests, publications, blog teaser, links
+- `styles.css` — light layout
+- `blog/` — posts (`index.html` list, `_template.html`, individual HTML posts)
 
-No JavaScript. Paths are relative so Pages works from the **main** branch **root**.
+## Write a blog post
 
-## Edit
-
-In `index.html`, replace the email placeholder (`your.name [at] domain [dot] com`) with a real address when ready. Bio, interests, and publications are plain HTML — update there only with verified facts.
+1. Copy `blog/_template.html` → `blog/your-slug.html`
+2. Edit title, date, and body
+3. Add a link in `blog/index.html` and in the Blog section of `index.html`
+4. Commit and push to `main` (Pages serves from root)
 
 ## Preview
 
@@ -21,8 +22,4 @@ In `index.html`, replace the email placeholder (`your.name [at] domain [dot] com
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`, or open `index.html` in a browser.
-
-## Style notes
-
-Light background, system fonts, readable column (~40rem), no dark theme, no portfolio cards or CTAs — closer to a faculty/researcher personal page than a product landing page.
+Open `http://localhost:8000`.

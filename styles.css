@@ -119,3 +119,31 @@ a:focus-visible {
     padding-top: 4.5rem;
   }
 }
+
+.blog-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-list li {
+  margin: 0 0 0.65rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-back {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+article header {
+  margin-bottom: 1.5rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
