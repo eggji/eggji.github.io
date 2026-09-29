@@ -77,9 +77,9 @@
 
       <h2>My take</h2>
       <ul>
-        <li>This matches something I've noticed in my own work.</li>
-        <li>In agentic work, though, I've seen the model learn things the pretrained model didn't know.</li>
-        <li>In distillation, SFT and forward KL can help, but whether reverse KL (RKL) does is still unknown.</li>
+        <li>This lines up with what I've seen in practice: RLVR mostly sharpens what the base model can already do rather than expanding it.</li>
+        <li>Agentic RL looks different. With tools and multi-turn interaction, I've seen models pick up behaviors the pretrained model didn't have, though this still needs careful experiments and ablations to verify.</li>
+        <li>For distillation, SFT and forward-KL objectives clearly transfer new capability from the teacher. Whether reverse KL (on-policy distillation) does the same is still an open question, and an interesting one I'd like to dig into.</li>
       </ul>
     </article>
   </main>
