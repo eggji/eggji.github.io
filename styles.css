@@ -147,3 +147,32 @@ code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9em;
 }
+
+.tags {
+  display: block;
+  margin: 0.15rem 0 0;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0.3rem 0.25rem 0;
+  padding: 0 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.tag:hover,
+.tag:focus-visible,
+.tag.is-active {
+  color: var(--link);
+  border-color: currentColor;
+}
+
+.tag-filter {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
