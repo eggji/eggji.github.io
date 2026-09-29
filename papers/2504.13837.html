@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="One Paper a Day: Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?" />
+  <title>Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model? — Jinlong Ji</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <main>
+    <p class="nav-back"><a href="./">← One Paper a Day</a></p>
+    <article>
+      <header>
+        <h1>Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?</h1>
+        <p class="meta">
+          Yang Yue, Zhiqi Chen, Rui Lu, Andrew Zhao, Zhaokai Wang, Yang Yue, Shiji Song, Gao Huang<br />
+          <a href="https://arxiv.org/abs/2504.13837">arXiv:2504.13837</a>
+          · Read <time datetime="2026-09-28">2026-09-28</time>
+        </p>
+        <p class="tags">
+          <a class="tag" href="./?tag=RL">RL</a>
+          <a class="tag" href="./?tag=LLM%20reasoning">LLM reasoning</a>
+          <a class="tag" href="./?tag=Post-training">Post-training</a>
+          <a class="tag" href="./?tag=Evaluation">Evaluation</a>
+          <a class="tag" href="./?tag=Empirical%20study">Empirical study</a>
+        </p>
+      </header>
+
+      <h2>TL;DR</h2>
+      <p>
+        The paper asks whether RL with verifiable rewards (RLVR) teaches LLMs genuinely new reasoning,
+        or mostly reweights what the base model can already do. Measuring pass@k at large k across
+        model families, RL algorithms, and math, code, and visual reasoning benchmarks, it finds that
+        RLVR raises pass@1 but base models solve more problems at large k, and RLVR's reasoning paths
+        already lie in the base model's distribution. RLVR mainly improves sampling efficiency;
+        distillation from a stronger teacher, by contrast, can expand the reasoning boundary.
+      </p>
+
+      <h2>Conclusion summary</h2>
+      <ul>
+        <li>
+          RLVR-trained models beat their base models at small k (e.g. pass@1), but base models reach
+          higher pass@k as k grows. This holds consistently across model families and across math,
+          code generation, and visual reasoning benchmarks.
+        </li>
+        <li>
+          The reasoning boundary narrows with training: as RLVR progresses, pass@1 on the training set
+          improves while coverage (pass@256) decreases. Accuracy histograms show the gains come from
+          sampling more efficiently on problems the base model can already solve, not from solving new ones.
+        </li>
+        <li>
+          Perplexity analysis shows the reasoning paths produced by RLVR models already exist in the base
+          model's output distribution, so the reasoning capacity of current RLVR models is bounded by
+          that of their base model.
+        </li>
+        <li>
+          Six popular RLVR algorithms (PPO, GRPO, Reinforce++, RLOO, ReMax, DAPO) perform similarly.
+          Their sampling efficiency gap relative to the base model's pass@256 stays large (above 40 points)
+          and varies only slightly, so they remain far from optimal. Adding a KL term, using more rollouts
+          per prompt, or raising temperature to match base-model entropy does not close the gap at large k.
+        </li>
+        <li>
+          Distillation behaves differently: a model distilled from a stronger reasoning teacher
+          (DeepSeek-R1-Distill-Qwen-7B) has a pass@k curve consistently above its base model's,
+          so it gains reasoning patterns the base model lacked.
+        </li>
+        <li>
+          The authors conclude that current RLVR has not realized RL's potential to discover novel
+          reasoning, likely because exploration is hard in the vast language space and constrained by
+          the pretrained prior. They point to high-level exploration, curriculum and data scaling,
+          process rewards or fine-grained credit assignment, and multi-turn agentic RL as directions,
+          and note that proprietary frontier models and pipelines limit the study. A preliminary check
+          on Magistral-Medium vs. its base model shows the same trend.
+        </li>
+      </ul>
+
+      <h2>My take</h2>
+      <!-- My take: write your own notes here. -->
+    </article>
+  </main>
+</body>
+</html>
